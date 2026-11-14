@@ -1,0 +1,10 @@
+# Bundle layer for dsh-wechat-clawbot.
+#
+# 一行 host 插件：扫码登录微信 ClawBot → 长轮询收消息 → 交给 DSH agent 处理 → 回发到微信。
+# 所有可调项都在下面的 config 里；删掉某项即用默认值（见 README）。
+- insert:
+    - id: wechat-clawbot
+      name: dsh-wechat-clawbot
+      config:
+        enabled: true
+        autoLogin: true

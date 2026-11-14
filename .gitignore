@@ -1,0 +1,11 @@
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 插件运行态（含 bot_token，绝不能进仓库）
+state.json
+activity.log
+qr*.png
+qr*.html

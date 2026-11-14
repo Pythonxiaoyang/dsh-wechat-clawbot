@@ -1,0 +1,44 @@
+{
+  "name": "dsh-wechat-clawbot",
+  "version": "0.1.0",
+  "description": "在微信里使用 DeepSeek Harness：通过微信内置的 ClawBot 插件（腾讯 iLink Bot API）扫码接入，双向收发消息。由易佳科技（Eagiaon IT）开发维护。",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "vendor",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "license": "MIT",
+  "author": "易佳科技 (Eagiaon IT)",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "wechat",
+    "weixin",
+    "clawbot",
+    "ilink"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node --check src/index.js && node --check src/clawbot.js && node --check src/ilink.js && node --check src/bridge.js && node --check src/state.js && node --check src/qr.js",
+    "test": "node --test --test-concurrency=1 test/ilink.test.mjs test/bridge.test.mjs test/qr.test.mjs test/ui.test.mjs test/clawbot.test.mjs"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.0"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
